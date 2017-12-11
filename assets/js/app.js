@@ -3,6 +3,7 @@ var app = angular.module("MyfirstApp",[]);
 app.controller("FirstContoller", ["$scope", "$http", function(m,h) {
   m.nombre = "Clemens";
   m.nuevoComentario = {};
+  m.posts = [];
   m.comentarios = [
     {
       comentario: "Esto es una prueba",
@@ -19,7 +20,8 @@ app.controller("FirstContoller", ["$scope", "$http", function(m,h) {
   };
   h.get(url)
     .then(function (data) {
-      console.log(data)
+      console.log(data.data)
+      m.posts = data.data;
     });
   angular.element(document).ready(function () {
     console.log("listo");

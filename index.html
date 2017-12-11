@@ -15,6 +15,12 @@
     <input type="text" ng-model="nuevoComentario.comentario">
     <input type="text" ng-model="nuevoComentario.user">
     <button ng-click="agregarComentario()">Agregar</button>
+    <ul ng-repeat="p in posts">
+      <li>
+        <h2>{{p.title}}</h2>
+        <p>{{p.body}}</p>
+      </li>
+    </ul>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
   <script src="assets/js/app.js"></script>
   </body>
