@@ -1,3 +1,4 @@
+var url = "http://jsonplaceholder.typicode.com/posts";
 var app = angular.module("MyfirstApp",[]);
 app.controller("FirstContoller", ["$scope", "$http", function(m,h) {
   m.nombre = "Clemens";
@@ -16,4 +17,8 @@ app.controller("FirstContoller", ["$scope", "$http", function(m,h) {
     m.comentarios.push(m.nuevoComentario);
     m.nuevoComentario = {};
   }
+  h.get(url)
+    .then(function (data) {
+      console.log(data)
+    });
 }]);
