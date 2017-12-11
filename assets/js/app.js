@@ -16,9 +16,12 @@ app.controller("FirstContoller", ["$scope", "$http", function(m,h) {
   m.agregarComentario = function () {
     m.comentarios.push(m.nuevoComentario);
     m.nuevoComentario = {};
-  }
+  };
   h.get(url)
     .then(function (data) {
       console.log(data)
     });
+  angular.element(document).ready(function () {
+    console.log("listo");
+  });
 }]);
